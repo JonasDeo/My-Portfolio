@@ -5,7 +5,6 @@ import {
   useRouter,
 } from "@tanstack/react-router";
 
-import appCss from "../styles.css?url";
 import { THEME_SCRIPT } from "../components/theme-toggle";
 
 function NotFoundComponent() {
@@ -107,12 +106,6 @@ export const Route = createRootRoute({
       },
     ],
 
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
   }),
 
   component: RootComponent,
