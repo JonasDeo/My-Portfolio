@@ -92,13 +92,13 @@ export function SiteHeader() {
               onClick={(e) => {
                 if (scrollToSection("contact")) e.preventDefault();
               }}
-              className="hidden sm:inline-flex btn-dark py-2.5 px-4 text-sm"
+              className="hidden md:inline-flex btn-dark py-2.5 px-4 text-sm"
             >
               Start a project
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
           ) : (
-            <Link to="/" hash="contact" className="hidden sm:inline-flex btn-dark py-2.5 px-4 text-sm">
+            <Link to="/" hash="contact" className="hidden md:inline-flex btn-dark py-2.5 px-4 text-sm">
               Start a project
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </Link>
@@ -117,7 +117,7 @@ export function SiteHeader() {
         </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="md:hidden border-t border-border bg-background menu-drop">
           <nav className="mx-auto max-w-7xl px-4 py-3 flex flex-col text-sm font-medium">
             {NAV.map((n) => renderNavLink(n, true))}
             <Link
@@ -147,10 +147,14 @@ export function SiteFooter() {
           <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
             Software engineer & founder building websites and systems that drive real business results. Based in Tanzania, available worldwide.
           </p>
-          <Link to="/" hash="contact" className="btn-dark mt-6 py-3 px-5 text-sm">
-            Start a project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </Link>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Link to="/" hash="contact" className="btn-dark py-3 px-5 text-sm">
+              Start a project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </Link>
+            <a href="#" className="btn-ghost py-3 px-5 text-sm">Download CV</a>
+          </div>
+
         </div>
         <div>
           <p className="font-semibold mb-3 text-sm">Explore</p>

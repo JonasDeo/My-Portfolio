@@ -4,7 +4,7 @@ import projTrinity from "@/assets/project-trinity.jpg";
 import projSwaber from "@/assets/project-swaber.jpg";
 import projBmp from "@/assets/project-bmppilla.jpg";
 import projDiabetes from "@/assets/project-diabetescode.jpg";
-import jonasAvatar from "@/assets/jonas-avatar.jpg";
+
 
 export type Project = {
   slug: string;
@@ -188,17 +188,18 @@ export const TIERS = [
 
 /* ---------------- SKILLS ---------------- */
 export const SKILLS = [
-  { area: "Frontend Engineering", pct: 95, tools: ["TypeScript", "Next.js", "Tailwind CSS", "Shadcn UI"] },
-  { area: "Backend Development", pct: 84, tools: ["Node.js", "Express", "REST APIs", "JWT & OAuth"] },
-  { area: "Database & Data Modeling", pct: 82, tools: ["MySQL", "PostgreSQL", "Prisma ORM"] },
-  { area: "Deployment & Infrastructure", pct: 85, tools: ["Linux", "Hosting", "NGINX", "Apache"] },
-  { area: "Version Control & Collaboration", pct: 78, tools: ["Git", "GitHub", "Code reviews"] },
-  { area: "Agentic & AI-Powered Development", pct: 88, tools: ["Claude", "Cursor", "Lovable", "OpenCode"] },
+  { area: "Frontend", tools: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"] },
+  { area: "Backend", tools: ["Node.js", "Express", "REST APIs", "JWT & OAuth", "PHP"] },
+  { area: "Database", tools: ["PostgreSQL", "MySQL", "Prisma ORM", "Data modeling"] },
+  { area: "Deployment", tools: ["Linux", "NGINX", "Apache", "CI/CD", "Uptime monitoring"] },
+  { area: "Collaboration", tools: ["Git", "GitHub", "Code reviews", "Async handover"] },
+  { area: "AI-Assisted Dev", tools: ["Claude", "Cursor", "Lovable", "OpenCode"] },
 ];
 
 /* ---------------- TESTIMONIALS ---------------- */
 export const TESTIMONIALS = [
-  { quote: "Jonas understood the problem before we finished explaining it. The system he built replaced our spreadsheets and sped up monthly closing by days.", name: "Jonas Mshiu", role: "Director · TRP Construction", avatar: jonasAvatar },
+  { quote: "Jonas understood the problem before we finished explaining it. The system he built replaced our spreadsheets and sped up monthly closing by days.", name: "Jonas Mshiu", role: "Director · TRP Construction" },
+
   { quote: "cPage simplifies the hustle of creating cover pages. It saves cost to students, exposes them to technology, and it just works.", name: "Felix Mselle", role: "Stationery Entrepreneur" },
   { quote: "I'm thoroughly impressed by the web development services Jonas provided. Professional, dedicated, and clear communication throughout.", name: "Lilian Mihale", role: "Health Counselor · Mihale Afya Clinic" },
   { quote: "Jonas is passionate, dedicated, and highly talented. He successfully built a robust internal tool now used daily by our team.", name: "Grayson Julius", role: "Business Dev Director · iPF Softwares" },
