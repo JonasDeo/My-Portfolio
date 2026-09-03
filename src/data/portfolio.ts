@@ -5,6 +5,10 @@ import projSwaber from "@/assets/project-swaber.jpg";
 import projBmp from "@/assets/project-bmppilla.jpg";
 import projDiabetes from "@/assets/project-diabetescode.jpg";
 
+// NOTE: image imports below are reused placeholders pointing at your existing
+// asset files. Swap these .jpg files for real screenshots/mockups of each
+// GitHub repo before shipping — the filenames no longer match the projects
+// they're attached to.
 
 export type Project = {
   slug: string;
@@ -13,6 +17,7 @@ export type Project = {
   img: string;
   featured?: boolean;
   live?: string;
+  github?: string;
   summary: string;
   problem: string;
   solution: string[];
@@ -55,66 +60,70 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
   },
   {
-    slug: "wifi-billing",
-    name: "Wi-Fi Billing System",
-    tag: "MikroTik Hotspot Billing & Vouchers",
+    slug: "travel-management-api",
+    name: "Travel Management API",
+    tag: "Business Travel & Expense Platform",
     img: projBmp,
-    summary: "Hotspot billing platform for ISPs running MikroTik routers — voucher generation, plans, and revenue reporting.",
-    problem: "Small ISPs were juggling MikroTik CLI, spreadsheets and printed vouchers to bill hotspot customers.",
+    featured: true,
+    github: "https://github.com/kibali-cell/Travel-Management-API",
+    summary: "A full business-travel backend: flight & hotel booking, expense tracking and policy enforcement across three role tiers.",
+    problem: "Companies managing employee travel need booking, expense tracking and policy compliance in one place, not a pile of spreadsheets and email approvals.",
     solution: [
-      "Voucher generation with printable batches",
-      "MikroTik RADIUS integration",
-      "Revenue and usage dashboards",
-      "Multi-hotspot support",
+      "Role-based access for Employees, Travel Admins and Super Admins",
+      "Flight search & booking via the Amadeus and TravelDuqa APIs",
+      "Trip planning, expense tracking and reporting",
+      "Policy compliance checks with approval workflows for out-of-policy requests",
+      "Multi-company, multi-department support for Super Admins",
     ],
-    stack: ["PHP", "MySQL", "MikroTik API", "Tailwind"],
+    stack: ["Laravel", "PHP", "MySQL", "REST API"],
   },
   {
-    slug: "maconet",
-    name: "Maconet Agribusiness",
-    tag: "Agribusiness Marketing & Investment Platform",
+    slug: "cosmetics-beauty-ecommerce",
+    name: "Cosmetics & Beauty E-Commerce",
+    tag: "Full-Stack Online Store",
     img: projDiabetes,
-    live: "https://www.mass.co.tz/",
-    summary: "Marketing site and investor portal for a Tanzanian agribusiness fund.",
-    problem: "Maconet needed a credible online presence to attract diaspora investors and share farm updates.",
+    github: "https://github.com/kibali-cell/Cosmetics-Beauty-ecommerce",
+    summary: "A cosmetics storefront with cart, wishlist, reviews and a full admin backend for inventory and orders.",
+    problem: "A beauty retailer needed a proper storefront — not just a catalog page — with checkout, order tracking and stock management built in.",
     solution: [
-      "Investor-focused marketing pages",
-      "News & updates section",
-      "Contact & investment enquiry flow",
-      "Mobile-first responsive design",
+      "Product browsing, search and detailed product pages",
+      "Cart, checkout and order tracking for customers",
+      "Wishlist and customer reviews",
+      "Admin dashboard for products, orders, users and stock",
+      "Stripe/PayPal payment integration",
     ],
-    stack: ["Next.js", "Tailwind", "Sanity CMS"],
+    stack: ["Laravel", "Blade", "MySQL", "Tailwind CSS"],
   },
   {
-    slug: "trinity",
-    name: "Trinity",
-    tag: "Poultry POS",
+    slug: "swahili-sms-filter",
+    name: "Swahili SMS Spam Filter",
+    tag: "Android App · Machine Learning",
     img: projTrinity,
-    summary: "Point-of-sale and inventory system built for a Tanzanian poultry retail chain.",
-    problem: "The business was tracking sales, feed stock and bird counts in a mix of notebooks and WhatsApp messages.",
+    github: "https://github.com/kibali-cell/swahili-sms-filter-android",
+    summary: "An Android app that uses machine learning to detect and filter spam SMS in real time, built specifically for Swahili-speaking users.",
+    problem: "Spam-filtering tools are built for English text and miss most Swahili spam entirely, leaving local users exposed.",
     solution: [
-      "Fast POS with barcode & quick keys",
-      "Feed & stock inventory tracking",
-      "Daily/weekly revenue reports",
-      "Role-based staff accounts",
+      "On-device ML model trained to classify Swahili SMS as spam or legitimate",
+      "Real-time filtering as messages arrive",
+      "Native Android app with a simple, clear interface",
+      "Designed around Swahili language patterns rather than translated English models",
     ],
-    stack: ["PHP", "MySQL", "Bootstrap"],
+    stack: ["Java", "Android", "Machine Learning"],
   },
   {
-    slug: "exchange-safaris",
-    name: "Exchange Safaris & Tours",
-    tag: "Travel & Courier Services Website",
+    slug: "ecommerce-flutter",
+    name: "eCommerce Flutter App",
+    tag: "Cross-Platform Shopping App",
     img: projSwaber,
-    live: "https://exchangesafaris.co.tz/",
-    summary: "Website and booking flow for a Tanzanian safari and courier company.",
-    problem: "Bookings were entirely over phone — no online catalog, no lead capture, no way to share tour packages.",
+    github: "https://github.com/kibali-cell/eCommerce-Flutter",
+    summary: "A cross-platform mobile shopping app built with Flutter, focused on a smooth, native-feeling shopping experience.",
+    problem: "Small retailers need a mobile shopping experience without maintaining separate iOS and Android codebases.",
     solution: [
-      "Tour package catalog with rich imagery",
-      "Booking / quote request forms",
-      "Courier service pages",
-      "SEO-focused route pages",
+      "Single Flutter codebase targeting iOS and Android",
+      "Product browsing, cart and checkout flows",
+      "Clean, native-feeling UI components",
     ],
-    stack: ["Next.js", "Tailwind", "Node.js"],
+    stack: ["Flutter", "Dart"],
   },
 ];
 
@@ -189,8 +198,9 @@ export const TIERS = [
 /* ---------------- SKILLS ---------------- */
 export const SKILLS = [
   { area: "Frontend", tools: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"] },
-  { area: "Backend", tools: ["Node.js", "Express", "REST APIs", "JWT & OAuth", "PHP"] },
+  { area: "Backend", tools: ["Node.js", "Express", "REST APIs", "JWT & OAuth", "PHP", "Laravel"] },
   { area: "Database", tools: ["PostgreSQL", "MySQL", "Prisma ORM", "Data modeling"] },
+  { area: "Mobile", tools: ["Flutter", "Dart", "Android (Java)"] },
   { area: "Deployment", tools: ["Linux", "NGINX", "Apache", "CI/CD", "Uptime monitoring"] },
   { area: "Collaboration", tools: ["Git", "GitHub", "Code reviews", "Async handover"] },
   { area: "AI-Assisted Dev", tools: ["Claude", "Cursor", "Lovable", "OpenCode"] },
@@ -199,7 +209,6 @@ export const SKILLS = [
 /* ---------------- TESTIMONIALS ---------------- */
 export const TESTIMONIALS = [
   { quote: "Jonas understood the problem before we finished explaining it. The system he built replaced our spreadsheets and sped up monthly closing by days.", name: "Jonas Mshiu", role: "Director · TRP Construction" },
-
   { quote: "cPage simplifies the hustle of creating cover pages. It saves cost to students, exposes them to technology, and it just works.", name: "Felix Mselle", role: "Stationery Entrepreneur" },
   { quote: "I'm thoroughly impressed by the web development services Jonas provided. Professional, dedicated, and clear communication throughout.", name: "Lilian Mihale", role: "Health Counselor · Mihale Afya Clinic" },
   { quote: "Jonas is passionate, dedicated, and highly talented. He successfully built a robust internal tool now used daily by our team.", name: "Grayson Julius", role: "Business Dev Director · iPF Softwares" },
